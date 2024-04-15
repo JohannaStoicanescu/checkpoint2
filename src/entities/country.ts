@@ -43,6 +43,11 @@ export class Country extends BaseEntity {
         throw new Error("Emoji is required");
       }
       this.emoji = country.emoji;
+
+      if (!country.continent) {
+        throw new Error("Continent is required");
+      }
+      this.continent = country.continent;
     }
   }
   static async createCountry(country?: CreateCountry) {
